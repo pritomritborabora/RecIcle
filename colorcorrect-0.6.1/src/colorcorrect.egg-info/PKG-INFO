@@ -1,0 +1,77 @@
+Metadata-Version: 1.0
+Name: colorcorrect
+Version: 0.6.1
+Summary: imprement some of color correction algorithms
+Home-page: http://www.bitbucket.org/aihara/colorcorrect
+Author: Shunsuke Aihara
+Author-email: s.aihara@gmail.com
+License: MIT License
+Description-Content-Type: UNKNOWN
+Description: colorcorrect
+        by Shunsuke Aihara - http://argmax.jp
+        
+        date::
+        
+            February 2012
+        
+        description::
+        
+            Imprement some of color correction algorithms
+        
+        require::
+        
+            python2.6 or later
+            numpy
+            PIL
+        
+        install::
+        
+            % python setup.py build
+            % python setup.py install
+        
+        impement algorithms::
+        
+            gray world
+                 colorcorrect.algorithm.gray_world
+                 usage: image
+            max white
+                colorcorrect.algorithm.max_white
+                usage: image
+            stretch
+                colorcorrect.algorithm.stretch
+                usage: image
+            retinex
+                colorcorrect.algorithm.retinex
+                usage: image
+            retinex with adjust
+                    colorcorrect.algorithm.retinex_with_adjust
+                    usage: image
+            standard deviation weighted grey world
+                     colorcorrect.algorithm.standard_deviation_weighted_grey_world
+                     usage: image,subblock width(default:20), subblock height(default:20)
+            standard deviation and luminance weighted gray world
+                     colorcorrect.algorithm.standard_deviation_and_luminance_weighted_gray_world
+                     usage: image,subblock width(default:20), subblock height(default:20)
+            luminance weighted gray world
+                      colorcorrect.algorithm.luminance_weighted_gray_world
+                     usage: image,subblock width(default:20), subblock height(default:20)
+            automatic color equalization
+                      colorcorrect.algorithm.automatic_color_equalization
+                      usage: image,slope(default:10),limit(default:1000)
+        
+        sample usage::
+        
+            >>> import Image
+            >>> import colorcorrect.algorithm as cca
+            >>> from colorcorrect.util import from_pil, to_pil
+            >>> img = Image.open('/path/to/image')
+            >>> to_pil(cca.stretch(from_pil(img))).show()
+        
+        References::
+        
+            Denis. Nikitenko, M. Wirth and K. Trudel, "Applicability Of White-Balancing Algorithms to Restoring Faded Colour Slides: An Empirical Evaluation.", Journal of Multimedia, vol. 3, no. 5, 2008.
+            HK. Lam, OC. Au and CW. Wong, "Automatic white balancing using luminance component and standard deviation of RGB components", in Proc. ICASSP, 2004.
+            A. Rizzi, C. Gatta and D. Marini, "A new algorithm for unsupervised global and local color correction.", Pattern Recognition Letters, vol. 24, no. 11, 2003.
+        
+Keywords: image-processing computer-vision
+Platform: UNKNOWN
