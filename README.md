@@ -18,17 +18,26 @@ PREPARATION:
 - Create ./data/test
 
 OPTIONS:
+
 python net.py <weight.h5> [-i <image>] [-e <epochs>]
  [-s <image size>] [-b <batch size>] [--train] [--test]
 
  <weight.h5>: Weight file to be loaded or saved. With h5 extension.
+ 
  -i <image>: Image filename to be predicted
+ 
  --train: Run the training procedure
+ 
  --test: Run the evaluation procedure
+ 
  -e <epochs>: Number of epochs when training
+ 
  -s <image size>: Size in pixels of the input images
+ 
  -b <batch size>: Batch size when training
 
  For example:
+ 
  python net.py best.h5 -i trash.png
+ 
  python net.py fix.h5 --train --test -e 100
